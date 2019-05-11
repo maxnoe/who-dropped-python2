@@ -45,7 +45,7 @@
           <tbody>
             {% for project in projects %}
             <tr class="{% if project['python3'] and project['python2'] %}both{% elif project['python3'] %}python3-only{% else %}python2-only{% endif %}">
-              <td align="right">{{ loop.index + 1}}</td>
+              <td align="right">{{ loop.index }}</td>
               <td>{{ project['project'] }}</td>
               <td align="right">{{ project['download_count'] }}</td>
               <td>
