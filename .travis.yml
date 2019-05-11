@@ -5,7 +5,9 @@ dist: xenial
 
 install: pip install -r requirements.txt
 script: python publish.py
-after_success: mkdir out cp style.css index.html out/
+after_success:
+    - mkdir out
+    - cp style.css index.html out/
 
 deploy:
   local_dir: out
