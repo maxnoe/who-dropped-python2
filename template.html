@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python 3 Adoption</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="content" align="center">
+      <header>
+        <h1>Who has already dropped Python 2 support?</h1>
+
+        <p>
+          Of the top {{ limit }} downloaded projects on PyPI as
+          published weekly by <a href="https://hugovk.github.io/top-pypi-packages/">https://hugovk.github.io/top-pypi-packages</a>
+        </p>
+
+        <ul style="display: inline-block; text-align: left;">
+          <li>
+            {{ summary['python3-only'] }} have dropped python 2 support in their latest release 
+          </li>
+          <li>
+            {{ summary['both'] }} support both
+          </li>
+          <li>
+            {{ summary['python2-only'] }} are still python 2 only
+          </li>
+        </ul>
+      </header>
+      <main>
+        <table class="table" style="max-width: 60em;">
+          <thead>
+            <tr>
+              <th align="right">#</th>
+              <th>Package</th>
+              <th align="right">Downloads (last 30 days)</th>
+              <th>Python 3</th>
+              <th>Python 2</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for project in projects %}
+            <tr class="{% if project['python3'] and project['python2'] %}both{% elif project['python3'] %}python3-only{% else %}python2-only{% endif %}">
+              <td align="right">{{ loop.index + 1}}</td>
+              <td>{{ project['project'] }}</td>
+              <td align="right">{{ project['download_count'] }}</td>
+              <td>
+                {% if project['python3'] %}
+                  <i class="icon icon-check"></i> 
+                {% else %}
+                  <i class="icon icon-stop"></i> 
+                {% endif %}
+              </td>
+              <td>
+                {% if project['python2'] %}
+                  <i class="icon icon-check"></i> 
+                {% else %}
+                  <i class="icon icon-stop"></i> 
+                {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </main>
+    </div>
+  </body>
+</html>

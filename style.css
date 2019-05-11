@@ -1,0 +1,15 @@
+.content {
+  padding: 2rem 4rem;
+}
+
+.python3-only {
+  background-color: #bbd5f9;
+}
+
+.python2-only {
+  background-color: #fca46a;
+}
+
+.both {
+  background-color: #daf9bb;
+}
