@@ -23,6 +23,7 @@ async def get_pypi_data(project, session):
 
 async def get_project_data(project, session):
     data = await get_pypi_data(project['project'], session)
+    project['url'] = data['info'].get('home_page')
     project['python2'] = any(
         CLASSIFIER.format(v) in data['info']['classifiers']
         for v in VERSIONS_2
