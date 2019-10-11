@@ -12,7 +12,7 @@ async def get_most_dowloaded_projects(session):
     url = 'https://hugovk.github.io/top-pypi-packages/top-pypi-packages-30-days.json'
     async with session.get(url) as resp:
         data = await resp.json()
-        return data['rows']
+        return data['rows'], data['last_update']
 
 
 async def get_pypi_data(project, session):
@@ -45,7 +45,7 @@ async def get_project_data(project, session):
 
 async def main():
     async with aiohttp.ClientSession() as session:
-        projects = await get_most_dowloaded_projects(session)
+        projects, last_update = await get_most_dowloaded_projects(session)
         futures = [get_project_data(p, session) for p in projects[:LIMIT]]
         projects = await asyncio.gather(*futures)
 
@@ -59,7 +59,10 @@ async def main():
 
     with open('index.html', 'w') as f:
         f.write(template.render(
-            projects=projects[:LIMIT], limit=LIMIT, summary=summary
+            projects=projects[:LIMIT],
+            limit=LIMIT,
+            summary=summary,
+            last_update=last_update,
         ))
 
 
