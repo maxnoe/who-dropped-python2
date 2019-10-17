@@ -3,7 +3,7 @@ from jinja2 import Template
 import asyncio
 
 CLASSIFIER = 'Programming Language :: Python :: {}'
-VERSIONS_3 = ['3', '3.3', '3.4', '3.5', '3.6', '3.7']
+VERSIONS_3 = ['3', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8']
 VERSIONS_2 = ['2', '2.6', '2.7']
 LIMIT = 250
 
