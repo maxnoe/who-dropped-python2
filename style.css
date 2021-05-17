@@ -15,6 +15,9 @@ body {
 .python2-only {
   background-color: #fca46a;
 }
+.missing {
+  background-color: #aaaaaa;
+}
 
 .both {
   background-color: #daf9bb;

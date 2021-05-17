@@ -1,9 +1,10 @@
 import aiohttp
 from jinja2 import Template
 import asyncio
+from collections import defaultdict
 
 CLASSIFIER = 'Programming Language :: Python :: {}'
-VERSIONS_3 = ['3', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8']
+VERSIONS_3 = ['3', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9', '3.10']
 VERSIONS_2 = ['2', '2.6', '2.7']
 LIMIT = 250
 
@@ -24,17 +25,20 @@ async def get_pypi_data(project, session):
 async def get_project_data(project, session):
     data = await get_pypi_data(project['project'], session)
     project['url'] = data['info'].get('home_page')
+    # sometimes empty, sometimes None
+    requires_python = data['info']['requires_python'] or ''
+
     project['python2'] = any(
         CLASSIFIER.format(v) in data['info']['classifiers']
         for v in VERSIONS_2
-    )
+    ) or '>=2' in requires_python
     for v in VERSIONS_3:
         project[f'python{v}'] = CLASSIFIER.format(v) in data['info']['classifiers']
 
     project['python3'] = any(
         CLASSIFIER.format(v) in data['info']['classifiers']
         for v in VERSIONS_3
-    )
+    ) or '>=3' in requires_python
 
     project['download_count'] = '{:,d}'.format(
         project['download_count']
@@ -49,10 +53,16 @@ async def main():
         futures = [get_project_data(p, session) for p in projects[:LIMIT]]
         projects = await asyncio.gather(*futures)
 
-    summary = {}
-    summary['both'] = sum(p['python2'] and p['python3'] for p in projects)
-    summary['python3-only'] = sum(p['python3'] and not p['python2'] for p in projects)
-    summary['python2-only'] = sum(p['python2'] and not p['python3'] for p in projects)
+    summary = defaultdict(int)
+    for p in projects:
+        if p['python2'] and p['python3']:
+            summary['both'] += 1
+        elif p['python3'] and not p['python2']:
+            summary['python3-only'] += 1
+        elif p['python2'] and not p['python3']:
+            summary['python2-only'] += 1
+        else:
+            summary['missing_info'] += 1
 
     with open('template.html') as f:
         template = Template(f.read())

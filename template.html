@@ -42,7 +42,7 @@
           <tbody>
             {% for project in projects %}
             <tr 
-              class="{% if project['python3'] and project['python2'] %}both{% elif project['python3'] %}python3-only{% else %}python2-only{% endif %}"
+                class="{% if project['python3'] and project['python2'] %}both{% elif project['python3'] %}python3-only{% elif project['python2'] %}python2-only{% else %}missing{% endif %}"
               onclick="window.open('{{ project['url'] }}', '_blank');"
               >
               <td align="right">{{ loop.index }}</td>
@@ -72,15 +72,16 @@
 
   <script charset="utf-8">
     var data = [{
-      values: [{{ summary['both'] }}, {{ summary['python3-only'] }}, {{ summary['python2-only'] }}],
-      labels: ['2 & 3', 'Only 3', 'Only 2'],
+      values: [{{ summary['both'] }}, {{ summary['python3-only'] }}, {{ summary['python2-only'] }}, {{ summary['missing_info'] }}],
+      labels: ['2 & 3', 'Only 3', 'Only 2', 'No Info'],
       hole: 0.5,
       type: 'pie',
       marker: {
         colors: [
           '#daf9bb',
           '#bbd5f9',
-          '#fca46a'
+          '#fca46a',
+          '#aaaaaa',
         ]
       },
       textinfo: 'label',
@@ -88,7 +89,7 @@
     }];
 
     var layout = {
-      height: 400,
+      height: 500,
       width: 400,
       autosize: true,
       showlegend: false,
