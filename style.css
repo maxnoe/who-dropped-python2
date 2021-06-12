@@ -1,0 +1,28 @@
+body {
+  text-align: center
+}
+
+.content {
+  padding: 5px;
+  max-width: 80rem;
+  display: inline-block;
+}
+
+.python3-only {
+  background-color: #bbd5f9;
+}
+
+.python2-only {
+  background-color: #fca46a;
+}
+.missing {
+  background-color: #aaaaaa;
+}
+
+.both {
+  background-color: #daf9bb;
+} 
+
+.table-hover tr:hover {
+    cursor: pointer;
+}

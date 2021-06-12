@@ -1,0 +1,4827 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Who dropped Python 2?</title>
+
+    <script src="https://cdn.plot.ly/plotly-1.47.4.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="content" align="center">
+      <header>
+        <h1>Who has already dropped Python 2 support?</h1>
+
+        <p>
+          Statistics of the top 250 downloaded projects on PyPI as
+          published weekly by <a href="https://hugovk.github.io/top-pypi-packages/">https://hugovk.github.io/top-pypi-packages</a>
+        </p>
+        <p>Code at <a href="https://github.com/maxnoe/who-dropped-python2">github.com/maxnoe/who-dropped-python2</a></p>
+
+        <p>Last updated at 2021-06-01 14:30:21</p>
+
+        <div id='plot'></div>
+
+
+      </header>
+      <main>
+        <table class="table table-hover" style="max-width: 60em;">
+          <thead>
+            <tr>
+              <th align="right">#</th>
+              <th>Package</th>
+              <th align="right">Downloads (last 30 days)</th>
+              <th>Py3</th>
+              <th>Py2</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://urllib3.readthedocs.io/', '_blank');"
+              >
+              <td align="right">1</td>
+              <td>urllib3</td>
+              <td align="right">140&thinsp;539&thinsp;061</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/benjaminp/six', '_blank');"
+              >
+              <td align="right">2</td>
+              <td>six</td>
+              <td align="right">118&thinsp;073&thinsp;174</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/boto/botocore', '_blank');"
+              >
+              <td align="right">3</td>
+              <td>botocore</td>
+              <td align="right">114&thinsp;229&thinsp;350</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://requests.readthedocs.io', '_blank');"
+              >
+              <td align="right">4</td>
+              <td>requests</td>
+              <td align="right">105&thinsp;824&thinsp;589</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/boto/boto3', '_blank');"
+              >
+              <td align="right">5</td>
+              <td>boto3</td>
+              <td align="right">103&thinsp;940&thinsp;768</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://certifiio.readthedocs.io/en/latest/', '_blank');"
+              >
+              <td align="right">6</td>
+              <td>certifi</td>
+              <td align="right">100&thinsp;473&thinsp;835</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/pypa/setuptools', '_blank');"
+              >
+              <td align="right">7</td>
+              <td>setuptools</td>
+              <td align="right">98&thinsp;030&thinsp;476</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/kjd/idna', '_blank');"
+              >
+              <td align="right">8</td>
+              <td>idna</td>
+              <td align="right">97&thinsp;828&thinsp;147</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/chardet/chardet', '_blank');"
+              >
+              <td align="right">9</td>
+              <td>chardet</td>
+              <td align="right">94&thinsp;807&thinsp;068</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/boto/s3transfer', '_blank');"
+              >
+              <td align="right">10</td>
+              <td>s3transfer</td>
+              <td align="right">90&thinsp;699&thinsp;186</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://dateutil.readthedocs.io', '_blank');"
+              >
+              <td align="right">11</td>
+              <td>python-dateutil</td>
+              <td align="right">90&thinsp;137&thinsp;833</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://pip.pypa.io/', '_blank');"
+              >
+              <td align="right">12</td>
+              <td>pip</td>
+              <td align="right">87&thinsp;570&thinsp;356</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://pyyaml.org/', '_blank');"
+              >
+              <td align="right">13</td>
+              <td>pyyaml</td>
+              <td align="right">84&thinsp;563&thinsp;242</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://www.numpy.org', '_blank');"
+              >
+              <td align="right">14</td>
+              <td>numpy</td>
+              <td align="right">70&thinsp;131&thinsp;939</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/pypa/wheel', '_blank');"
+              >
+              <td align="right">15</td>
+              <td>wheel</td>
+              <td align="right">67&thinsp;584&thinsp;054</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('http://cffi.readthedocs.org', '_blank');"
+              >
+              <td align="right">16</td>
+              <td>cffi</td>
+              <td align="right">65&thinsp;266&thinsp;675</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('http://aws.amazon.com/cli/', '_blank');"
+              >
+              <td align="right">17</td>
+              <td>awscli</td>
+              <td align="right">63&thinsp;228&thinsp;224</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://stuvel.eu/rsa', '_blank');"
+              >
+              <td align="right">18</td>
+              <td>rsa</td>
+              <td align="right">63&thinsp;116&thinsp;671</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/python/typing/blob/master/typing_extensions/README.rst', '_blank');"
+              >
+              <td align="right">19</td>
+              <td>typing-extensions</td>
+              <td align="right">61&thinsp;965&thinsp;963</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/etingof/pyasn1', '_blank');"
+              >
+              <td align="right">20</td>
+              <td>pyasn1</td>
+              <td align="right">61&thinsp;495&thinsp;102</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/jmespath/jmespath.py', '_blank');"
+              >
+              <td align="right">21</td>
+              <td>jmespath</td>
+              <td align="right">61&thinsp;171&thinsp;588</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://palletsprojects.com/p/markupsafe/', '_blank');"
+              >
+              <td align="right">22</td>
+              <td>markupsafe</td>
+              <td align="right">54&thinsp;169&thinsp;084</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://developers.google.com/protocol-buffers/', '_blank');"
+              >
+              <td align="right">23</td>
+              <td>protobuf</td>
+              <td align="right">52&thinsp;991&thinsp;251</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://www.attrs.org/', '_blank');"
+              >
+              <td align="right">24</td>
+              <td>attrs</td>
+              <td align="right">50&thinsp;948&thinsp;967</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://palletsprojects.com/p/jinja/', '_blank');"
+              >
+              <td align="right">25</td>
+              <td>jinja2</td>
+              <td align="right">50&thinsp;682&thinsp;494</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('http://pythonhosted.org/pytz', '_blank');"
+              >
+              <td align="right">26</td>
+              <td>pytz</td>
+              <td align="right">50&thinsp;300&thinsp;559</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/pyparsing/pyparsing/', '_blank');"
+              >
+              <td align="right">27</td>
+              <td>pyparsing</td>
+              <td align="right">50&thinsp;103&thinsp;178</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/pypa/packaging', '_blank');"
+              >
+              <td align="right">28</td>
+              <td>packaging</td>
+              <td align="right">49&thinsp;538&thinsp;410</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://palletsprojects.com/p/click/', '_blank');"
+              >
+              <td align="right">29</td>
+              <td>click</td>
+              <td align="right">47&thinsp;534&thinsp;249</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/python/importlib_metadata', '_blank');"
+              >
+              <td align="right">30</td>
+              <td>importlib-metadata</td>
+              <td align="right">47&thinsp;077&thinsp;183</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/eliben/pycparser', '_blank');"
+              >
+              <td align="right">31</td>
+              <td>pycparser</td>
+              <td align="right">46&thinsp;846&thinsp;094</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('http://docutils.sourceforge.net/', '_blank');"
+              >
+              <td align="right">32</td>
+              <td>docutils</td>
+              <td align="right">45&thinsp;985&thinsp;754</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://pandas.pydata.org', '_blank');"
+              >
+              <td align="right">33</td>
+              <td>pandas</td>
+              <td align="right">45&thinsp;647&thinsp;342</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/jaraco/zipp', '_blank');"
+              >
+              <td align="right">34</td>
+              <td>zipp</td>
+              <td align="right">45&thinsp;495&thinsp;572</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/pyca/cryptography', '_blank');"
+              >
+              <td align="right">35</td>
+              <td>cryptography</td>
+              <td align="right">45&thinsp;350&thinsp;067</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/tartley/colorama', '_blank');"
+              >
+              <td align="right">36</td>
+              <td>colorama</td>
+              <td align="right">44&thinsp;427&thinsp;432</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/requests/requests-oauthlib', '_blank');"
+              >
+              <td align="right">37</td>
+              <td>requests-oauthlib</td>
+              <td align="right">43&thinsp;548&thinsp;834</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/oauthlib/oauthlib', '_blank');"
+              >
+              <td align="right">38</td>
+              <td>oauthlib</td>
+              <td align="right">43&thinsp;223&thinsp;292</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/jpadilla/pyjwt', '_blank');"
+              >
+              <td align="right">39</td>
+              <td>pyjwt</td>
+              <td align="right">40&thinsp;574&thinsp;387</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/googleapis/python-api-core', '_blank');"
+              >
+              <td align="right">40</td>
+              <td>google-api-core</td>
+              <td align="right">35&thinsp;603&thinsp;946</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/googleapis/google-auth-library-python', '_blank');"
+              >
+              <td align="right">41</td>
+              <td>google-auth</td>
+              <td align="right">34&thinsp;889&thinsp;882</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/tkem/cachetools/', '_blank');"
+              >
+              <td align="right">42</td>
+              <td>cachetools</td>
+              <td align="right">34&thinsp;173&thinsp;982</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/micheles/decorator', '_blank');"
+              >
+              <td align="right">43</td>
+              <td>decorator</td>
+              <td align="right">32&thinsp;664&thinsp;853</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/uiri/toml', '_blank');"
+              >
+              <td align="right">44</td>
+              <td>toml</td>
+              <td align="right">31&thinsp;303&thinsp;806</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/etingof/pyasn1-modules', '_blank');"
+              >
+              <td align="right">45</td>
+              <td>pyasn1-modules</td>
+              <td align="right">30&thinsp;609&thinsp;952</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/gweis/isodate/', '_blank');"
+              >
+              <td align="right">46</td>
+              <td>isodate</td>
+              <td align="right">30&thinsp;194&thinsp;987</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://python-pillow.org', '_blank');"
+              >
+              <td align="right">47</td>
+              <td>pillow</td>
+              <td align="right">28&thinsp;725&thinsp;959</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://python-future.org', '_blank');"
+              >
+              <td align="right">48</td>
+              <td>future</td>
+              <td align="right">28&thinsp;442&thinsp;828</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/Azure/msrest-for-python', '_blank');"
+              >
+              <td align="right">49</td>
+              <td>msrest</td>
+              <td align="right">27&thinsp;787&thinsp;543</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/googleapis/python-storage', '_blank');"
+              >
+              <td align="right">50</td>
+              <td>google-cloud-storage</td>
+              <td align="right">26&thinsp;974&thinsp;876</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://www.scipy.org', '_blank');"
+              >
+              <td align="right">51</td>
+              <td>scipy</td>
+              <td align="right">26&thinsp;716&thinsp;843</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/googleapis/python-cloud-core', '_blank');"
+              >
+              <td align="right">52</td>
+              <td>google-cloud-core</td>
+              <td align="right">26&thinsp;454&thinsp;373</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://py.readthedocs.io/', '_blank');"
+              >
+              <td align="right">53</td>
+              <td>py</td>
+              <td align="right">25&thinsp;758&thinsp;610</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/websocket-client/websocket-client.git', '_blank');"
+              >
+              <td align="right">54</td>
+              <td>websocket-client</td>
+              <td align="right">25&thinsp;226&thinsp;052</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://palletsprojects.com/p/werkzeug/', '_blank');"
+              >
+              <td align="right">55</td>
+              <td>werkzeug</td>
+              <td align="right">25&thinsp;198&thinsp;369</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-blob', '_blank');"
+              >
+              <td align="right">56</td>
+              <td>azure-storage-blob</td>
+              <td align="right">24&thinsp;779&thinsp;744</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/googleapis/python-api-common-protos', '_blank');"
+              >
+              <td align="right">57</td>
+              <td>googleapis-common-protos</td>
+              <td align="right">24&thinsp;541&thinsp;398</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/googleapis/google-api-python-client/', '_blank');"
+              >
+              <td align="right">58</td>
+              <td>google-api-python-client</td>
+              <td align="right">24&thinsp;132&thinsp;569</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://lxml.de/', '_blank');"
+              >
+              <td align="right">59</td>
+              <td>lxml</td>
+              <td align="right">24&thinsp;090&thinsp;349</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/GrahamDumpleton/wrapt', '_blank');"
+              >
+              <td align="right">60</td>
+              <td>wrapt</td>
+              <td align="right">23&thinsp;926&thinsp;462</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://docs.pytest.org/en/latest/', '_blank');"
+              >
+              <td align="right">61</td>
+              <td>pytest</td>
+              <td align="right">23&thinsp;767&thinsp;738</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://arrow.apache.org/', '_blank');"
+              >
+              <td align="right">62</td>
+              <td>pyarrow</td>
+              <td align="right">23&thinsp;703&thinsp;997</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://grpc.io', '_blank');"
+              >
+              <td align="right">63</td>
+              <td>grpcio</td>
+              <td align="right">23&thinsp;656&thinsp;673</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/Julian/jsonschema', '_blank');"
+              >
+              <td align="right">64</td>
+              <td>jsonschema</td>
+              <td align="right">23&thinsp;486&thinsp;295</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/aio-libs/multidict', '_blank');"
+              >
+              <td align="right">65</td>
+              <td>multidict</td>
+              <td align="right">23&thinsp;472&thinsp;539</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://palletsprojects.com/p/flask', '_blank');"
+              >
+              <td align="right">66</td>
+              <td>flask</td>
+              <td align="right">23&thinsp;352&thinsp;633</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/core/azure-core', '_blank');"
+              >
+              <td align="right">67</td>
+              <td>azure-core</td>
+              <td align="right">23&thinsp;148&thinsp;171</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('http://www.sqlalchemy.org', '_blank');"
+              >
+              <td align="right">68</td>
+              <td>sqlalchemy</td>
+              <td align="right">23&thinsp;062&thinsp;312</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/aio-libs/yarl/', '_blank');"
+              >
+              <td align="right">69</td>
+              <td>yarl</td>
+              <td align="right">23&thinsp;052&thinsp;364</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('http://github.com/tobgu/pyrsistent/', '_blank');"
+              >
+              <td align="right">70</td>
+              <td>pyrsistent</td>
+              <td align="right">23&thinsp;006&thinsp;897</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/aio-libs/aiohttp', '_blank');"
+              >
+              <td align="right">71</td>
+              <td>aiohttp</td>
+              <td align="right">22&thinsp;928&thinsp;038</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://pygments.org/', '_blank');"
+              >
+              <td align="right">72</td>
+              <td>pygments</td>
+              <td align="right">22&thinsp;645&thinsp;398</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/googleapis/google-resumable-media-python', '_blank');"
+              >
+              <td align="right">73</td>
+              <td>google-resumable-media</td>
+              <td align="right">22&thinsp;171&thinsp;768</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('http://github.com/ActiveState/appdirs', '_blank');"
+              >
+              <td align="right">74</td>
+              <td>appdirs</td>
+              <td align="right">21&thinsp;984&thinsp;445</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://joblib.readthedocs.io', '_blank');"
+              >
+              <td align="right">75</td>
+              <td>joblib</td>
+              <td align="right">21&thinsp;704&thinsp;049</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/giampaolo/psutil', '_blank');"
+              >
+              <td align="right">76</td>
+              <td>psutil</td>
+              <td align="right">21&thinsp;484&thinsp;147</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://palletsprojects.com/p/itsdangerous/', '_blank');"
+              >
+              <td align="right">77</td>
+              <td>itsdangerous</td>
+              <td align="right">21&thinsp;403&thinsp;526</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/pytest-dev/pluggy', '_blank');"
+              >
+              <td align="right">78</td>
+              <td>pluggy</td>
+              <td align="right">21&thinsp;332&thinsp;028</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/aio-libs/async_timeout/', '_blank');"
+              >
+              <td align="right">79</td>
+              <td>async-timeout</td>
+              <td align="right">21&thinsp;307&thinsp;995</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('http://scikit-learn.org', '_blank');"
+              >
+              <td align="right">80</td>
+              <td>scikit-learn</td>
+              <td align="right">20&thinsp;694&thinsp;566</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/Azure/azure-sdk-for-python', '_blank');"
+              >
+              <td align="right">81</td>
+              <td>azure-common</td>
+              <td align="right">19&thinsp;581&thinsp;038</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/benediktschmitt/py-filelock', '_blank');"
+              >
+              <td align="right">82</td>
+              <td>filelock</td>
+              <td align="right">19&thinsp;534&thinsp;231</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/docker/docker-py', '_blank');"
+              >
+              <td align="right">83</td>
+              <td>docker</td>
+              <td align="right">19&thinsp;475&thinsp;654</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/httplib2/httplib2', '_blank');"
+              >
+              <td align="right">84</td>
+              <td>httplib2</td>
+              <td align="right">19&thinsp;177&thinsp;802</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://matplotlib.org', '_blank');"
+              >
+              <td align="right">85</td>
+              <td>matplotlib</td>
+              <td align="right">18&thinsp;998&thinsp;809</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://uritemplate.readthedocs.org', '_blank');"
+              >
+              <td align="right">86</td>
+              <td>uritemplate</td>
+              <td align="right">18&thinsp;983&thinsp;969</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://pyopenssl.org/', '_blank');"
+              >
+              <td align="right">87</td>
+              <td>pyopenssl</td>
+              <td align="right">18&thinsp;722&thinsp;766</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://bitbucket.org/mrabarnett/mrab-regex', '_blank');"
+              >
+              <td align="right">88</td>
+              <td>regex</td>
+              <td align="right">18&thinsp;538&thinsp;078</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/prometheus/client_python', '_blank');"
+              >
+              <td align="right">89</td>
+              <td>prometheus-client</td>
+              <td align="right">18&thinsp;217&thinsp;475</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://tqdm.github.io', '_blank');"
+              >
+              <td align="right">90</td>
+              <td>tqdm</td>
+              <td align="right">18&thinsp;152&thinsp;049</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/tiran/defusedxml', '_blank');"
+              >
+              <td align="right">91</td>
+              <td>defusedxml</td>
+              <td align="right">17&thinsp;943&thinsp;420</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/GoogleCloudPlatform/google-auth-library-python-httplib2', '_blank');"
+              >
+              <td align="right">92</td>
+              <td>google-auth-httplib2</td>
+              <td align="right">17&thinsp;754&thinsp;403</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://virtualenv.pypa.io/', '_blank');"
+              >
+              <td align="right">93</td>
+              <td>virtualenv</td>
+              <td align="right">17&thinsp;144&thinsp;391</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/facelessuser/soupsieve', '_blank');"
+              >
+              <td align="right">94</td>
+              <td>soupsieve</td>
+              <td align="right">17&thinsp;062&thinsp;292</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://greenlet.readthedocs.io/', '_blank');"
+              >
+              <td align="right">95</td>
+              <td>greenlet</td>
+              <td align="right">17&thinsp;039&thinsp;602</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/nedbat/coveragepy', '_blank');"
+              >
+              <td align="right">96</td>
+              <td>coverage</td>
+              <td align="right">17&thinsp;019&thinsp;018</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://ipython.org', '_blank');"
+              >
+              <td align="right">97</td>
+              <td>ipython</td>
+              <td align="right">16&thinsp;864&thinsp;415</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://pexpect.readthedocs.io/', '_blank');"
+              >
+              <td align="right">98</td>
+              <td>pexpect</td>
+              <td align="right">16&thinsp;593&thinsp;933</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/pexpect/ptyprocess', '_blank');"
+              >
+              <td align="right">99</td>
+              <td>ptyprocess</td>
+              <td align="right">16&thinsp;582&thinsp;211</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('http://www.crummy.com/software/BeautifulSoup/bs4/', '_blank');"
+              >
+              <td align="right">100</td>
+              <td>beautifulsoup4</td>
+              <td align="right">16&thinsp;225&thinsp;384</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('http://github.com/intake/filesystem_spec', '_blank');"
+              >
+              <td align="right">101</td>
+              <td>fsspec</td>
+              <td align="right">16&thinsp;080&thinsp;689</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/SimonSapin/python-webencodings', '_blank');"
+              >
+              <td align="right">102</td>
+              <td>webencodings</td>
+              <td align="right">15&thinsp;980&thinsp;043</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/pycqa/mccabe', '_blank');"
+              >
+              <td align="right">103</td>
+              <td>mccabe</td>
+              <td align="right">15&thinsp;744&thinsp;665</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/astanin/python-tabulate', '_blank');"
+              >
+              <td align="right">104</td>
+              <td>tabulate</td>
+              <td align="right">15&thinsp;588&thinsp;653</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python2-only"
+              onclick="window.open('https://github.com/agronholm/pythonfutures', '_blank');"
+              >
+              <td align="right">105</td>
+              <td>futures</td>
+              <td align="right">15&thinsp;544&thinsp;201</td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/nucleic/kiwi', '_blank');"
+              >
+              <td align="right">106</td>
+              <td>kiwisolver</td>
+              <td align="right">15&thinsp;365&thinsp;915</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/prompt-toolkit/python-prompt-toolkit', '_blank');"
+              >
+              <td align="right">107</td>
+              <td>prompt-toolkit</td>
+              <td align="right">15&thinsp;094&thinsp;870</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/abseil/abseil-py', '_blank');"
+              >
+              <td align="right">108</td>
+              <td>absl-py</td>
+              <td align="right">15&thinsp;091&thinsp;004</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/googleapis/python-crc32c', '_blank');"
+              >
+              <td align="right">109</td>
+              <td>google-crc32c</td>
+              <td align="right">15&thinsp;088&thinsp;732</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('http://www.tornadoweb.org/', '_blank');"
+              >
+              <td align="right">110</td>
+              <td>tornado</td>
+              <td align="right">14&thinsp;747&thinsp;485</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://gunicorn.org', '_blank');"
+              >
+              <td align="right">111</td>
+              <td>gunicorn</td>
+              <td align="right">14&thinsp;708&thinsp;807</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/python/typed_ast', '_blank');"
+              >
+              <td align="right">112</td>
+              <td>typed-ast</td>
+              <td align="right">14&thinsp;475&thinsp;584</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://bitbucket.org/pypa/distlib', '_blank');"
+              >
+              <td align="right">113</td>
+              <td>distlib</td>
+              <td align="right">14&thinsp;140&thinsp;645</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('http://github.com/matplotlib/cycler', '_blank');"
+              >
+              <td align="right">114</td>
+              <td>cycler</td>
+              <td align="right">14&thinsp;126&thinsp;640</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://toolbelt.readthedocs.org', '_blank');"
+              >
+              <td align="right">115</td>
+              <td>requests-toolbelt</td>
+              <td align="right">14&thinsp;009&thinsp;785</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('http://github.com/RonnyPfannschmidt/iniconfig', '_blank');"
+              >
+              <td align="right">116</td>
+              <td>iniconfig</td>
+              <td align="right">14&thinsp;007&thinsp;980</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/jquast/wcwidth', '_blank');"
+              >
+              <td align="right">117</td>
+              <td>wcwidth</td>
+              <td align="right">13&thinsp;874&thinsp;574</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://pycodestyle.pycqa.org/', '_blank');"
+              >
+              <td align="right">118</td>
+              <td>pycodestyle</td>
+              <td align="right">13&thinsp;868&thinsp;545</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/pyca/pynacl/', '_blank');"
+              >
+              <td align="right">119</td>
+              <td>pynacl</td>
+              <td align="right">13&thinsp;526&thinsp;753</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/pyca/bcrypt/', '_blank');"
+              >
+              <td align="right">120</td>
+              <td>bcrypt</td>
+              <td align="right">13&thinsp;506&thinsp;467</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/googleapis/python-bigquery', '_blank');"
+              >
+              <td align="right">121</td>
+              <td>google-cloud-bigquery</td>
+              <td align="right">13&thinsp;501&thinsp;012</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://psycopg.org/', '_blank');"
+              >
+              <td align="right">122</td>
+              <td>psycopg2-binary</td>
+              <td align="right">13&thinsp;500&thinsp;738</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/python/mypy_extensions', '_blank');"
+              >
+              <td align="right">123</td>
+              <td>mypy-extensions</td>
+              <td align="right">13&thinsp;491&thinsp;419</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/paramiko/paramiko/', '_blank');"
+              >
+              <td align="right">124</td>
+              <td>paramiko</td>
+              <td align="right">13&thinsp;452&thinsp;450</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('http://cython.org/', '_blank');"
+              >
+              <td align="right">125</td>
+              <td>cython</td>
+              <td align="right">13&thinsp;440&thinsp;186</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/ipython/traitlets', '_blank');"
+              >
+              <td align="right">126</td>
+              <td>traitlets</td>
+              <td align="right">13&thinsp;365&thinsp;897</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://pycqa.github.io/isort/', '_blank');"
+              >
+              <td align="right">127</td>
+              <td>isort</td>
+              <td align="right">13&thinsp;202&thinsp;149</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('http://ipython.org', '_blank');"
+              >
+              <td align="right">128</td>
+              <td>ipython-genutils</td>
+              <td align="right">13&thinsp;120&thinsp;569</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/mozilla/bleach', '_blank');"
+              >
+              <td align="right">129</td>
+              <td>bleach</td>
+              <td align="right">12&thinsp;973&thinsp;102</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/pickleshare/pickleshare', '_blank');"
+              >
+              <td align="right">130</td>
+              <td>pickleshare</td>
+              <td align="right">12&thinsp;802&thinsp;365</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/GoogleCloudPlatform/google-auth-library-python-oauthlib', '_blank');"
+              >
+              <td align="right">131</td>
+              <td>google-auth-oauthlib</td>
+              <td align="right">12&thinsp;723&thinsp;911</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/davidhalter/parso', '_blank');"
+              >
+              <td align="right">132</td>
+              <td>parso</td>
+              <td align="right">12&thinsp;702&thinsp;432</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/davidhalter/jedi', '_blank');"
+              >
+              <td align="right">133</td>
+              <td>jedi</td>
+              <td align="right">12&thinsp;609&thinsp;556</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/takluyver/entrypoints', '_blank');"
+              >
+              <td align="right">134</td>
+              <td>entrypoints</td>
+              <td align="right">12&thinsp;597&thinsp;738</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/AzureAD/azure-activedirectory-library-for-python', '_blank');"
+              >
+              <td align="right">135</td>
+              <td>adal</td>
+              <td align="right">12&thinsp;380&thinsp;445</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/andymccurdy/redis-py', '_blank');"
+              >
+              <td align="right">136</td>
+              <td>redis</td>
+              <td align="right">12&thinsp;362&thinsp;468</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/gitpython-developers/GitPython', '_blank');"
+              >
+              <td align="right">137</td>
+              <td>gitpython</td>
+              <td align="right">12&thinsp;267&thinsp;740</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/takluyver/backcall', '_blank');"
+              >
+              <td align="right">138</td>
+              <td>backcall</td>
+              <td align="right">12&thinsp;158&thinsp;122</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('http://github.com/google/oauth2client/', '_blank');"
+              >
+              <td align="right">139</td>
+              <td>oauth2client</td>
+              <td align="right">12&thinsp;061&thinsp;726</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('http://mock.readthedocs.org/en/latest/', '_blank');"
+              >
+              <td align="right">140</td>
+              <td>mock</td>
+              <td align="right">11&thinsp;867&thinsp;197</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/gitpython-developers/smmap', '_blank');"
+              >
+              <td align="right">141</td>
+              <td>smmap</td>
+              <td align="right">11&thinsp;772&thinsp;669</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://openpyxl.readthedocs.io', '_blank');"
+              >
+              <td align="right">142</td>
+              <td>openpyxl</td>
+              <td align="right">11&thinsp;721&thinsp;553</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://foss.heptapod.net/openpyxl/et_xmlfile', '_blank');"
+              >
+              <td align="right">143</td>
+              <td>et-xmlfile</td>
+              <td align="right">11&thinsp;600&thinsp;601</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://pyzmq.readthedocs.org', '_blank');"
+              >
+              <td align="right">144</td>
+              <td>pyzmq</td>
+              <td align="right">11&thinsp;468&thinsp;196</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('http://jupyter.org', '_blank');"
+              >
+              <td align="right">145</td>
+              <td>nbformat</td>
+              <td align="right">11&thinsp;410&thinsp;950</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('http://networkx.github.io/', '_blank');"
+              >
+              <td align="right">146</td>
+              <td>networkx</td>
+              <td align="right">11&thinsp;328&thinsp;724</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/gitpython-developers/gitdb', '_blank');"
+              >
+              <td align="right">147</td>
+              <td>gitdb</td>
+              <td align="right">11&thinsp;304&thinsp;113</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://www.py4j.org/', '_blank');"
+              >
+              <td align="right">148</td>
+              <td>py4j</td>
+              <td align="right">11&thinsp;235&thinsp;288</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/cpburnz/python-path-specification', '_blank');"
+              >
+              <td align="right">149</td>
+              <td>pathspec</td>
+              <td align="right">11&thinsp;139&thinsp;166</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/andialbrecht/sqlparse', '_blank');"
+              >
+              <td align="right">150</td>
+              <td>sqlparse</td>
+              <td align="right">11&thinsp;094&thinsp;989</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/lepture/mistune', '_blank');"
+              >
+              <td align="right">151</td>
+              <td>mistune</td>
+              <td align="right">11&thinsp;013&thinsp;990</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/ionelmc/python-lazy-object-proxy', '_blank');"
+              >
+              <td align="right">152</td>
+              <td>lazy-object-proxy</td>
+              <td align="right">11&thinsp;007&thinsp;074</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://jupyter.org', '_blank');"
+              >
+              <td align="right">153</td>
+              <td>nbconvert</td>
+              <td align="right">10&thinsp;975&thinsp;806</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/more-itertools/more-itertools', '_blank');"
+              >
+              <td align="right">154</td>
+              <td>more-itertools</td>
+              <td align="right">10&thinsp;938&thinsp;969</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/piskvorky/smart_open', '_blank');"
+              >
+              <td align="right">155</td>
+              <td>smart-open</td>
+              <td align="right">10&thinsp;867&thinsp;345</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://argon2-cffi.readthedocs.io/', '_blank');"
+              >
+              <td align="right">156</td>
+              <td>argon2-cffi</td>
+              <td align="right">10&thinsp;795&thinsp;577</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/erdewit/nest_asyncio', '_blank');"
+              >
+              <td align="right">157</td>
+              <td>nest-asyncio</td>
+              <td align="right">10&thinsp;760&thinsp;612</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('', '_blank');"
+              >
+              <td align="right">158</td>
+              <td>testpath</td>
+              <td align="right">10&thinsp;711&thinsp;324</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/PyCQA/pyflakes', '_blank');"
+              >
+              <td align="right">159</td>
+              <td>pyflakes</td>
+              <td align="right">10&thinsp;699&thinsp;163</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/python-trio/async_generator', '_blank');"
+              >
+              <td align="right">160</td>
+              <td>async-generator</td>
+              <td align="right">10&thinsp;692&thinsp;774</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/python/importlib_resources', '_blank');"
+              >
+              <td align="right">161</td>
+              <td>importlib-resources</td>
+              <td align="right">10&thinsp;691&thinsp;949</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('http://jupyter.org', '_blank');"
+              >
+              <td align="right">162</td>
+              <td>notebook</td>
+              <td align="right">10&thinsp;654&thinsp;368</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('http://github.com/jgm/pandocfilters', '_blank');"
+              >
+              <td align="right">163</td>
+              <td>pandocfilters</td>
+              <td align="right">10&thinsp;647&thinsp;160</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://jupyter.org', '_blank');"
+              >
+              <td align="right">164</td>
+              <td>jupyter-client</td>
+              <td align="right">10&thinsp;553&thinsp;994</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/joblib/threadpoolctl', '_blank');"
+              >
+              <td align="right">165</td>
+              <td>threadpoolctl</td>
+              <td align="right">10&thinsp;419&thinsp;036</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://gitlab.com/pycqa/flake8', '_blank');"
+              >
+              <td align="right">166</td>
+              <td>flake8</td>
+              <td align="right">10&thinsp;407&thinsp;323</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://msgpack.org/', '_blank');"
+              >
+              <td align="right">167</td>
+              <td>msgpack</td>
+              <td align="right">10&thinsp;358&thinsp;057</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/pypa/setuptools_scm/', '_blank');"
+              >
+              <td align="right">168</td>
+              <td>setuptools-scm</td>
+              <td align="right">10&thinsp;317&thinsp;114</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/jupyter/terminado', '_blank');"
+              >
+              <td align="right">169</td>
+              <td>terminado</td>
+              <td align="right">10&thinsp;315&thinsp;698</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/pytest-dev/pytest-cov', '_blank');"
+              >
+              <td align="right">170</td>
+              <td>pytest-cov</td>
+              <td align="right">10&thinsp;244&thinsp;496</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/hsoft/send2trash', '_blank');"
+              >
+              <td align="right">171</td>
+              <td>send2trash</td>
+              <td align="right">10&thinsp;139&thinsp;792</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('http://github.com/dask/s3fs/', '_blank');"
+              >
+              <td align="right">172</td>
+              <td>s3fs</td>
+              <td align="right">10&thinsp;118&thinsp;243</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://jupyter.org', '_blank');"
+              >
+              <td align="right">173</td>
+              <td>nbclient</td>
+              <td align="right">10&thinsp;099&thinsp;587</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://psycopg.org/', '_blank');"
+              >
+              <td align="right">174</td>
+              <td>psycopg2</td>
+              <td align="right">10&thinsp;085&thinsp;002</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/cloudpipe/cloudpickle', '_blank');"
+              >
+              <td align="right">175</td>
+              <td>cloudpickle</td>
+              <td align="right">10&thinsp;058&thinsp;710</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://jupyter.org', '_blank');"
+              >
+              <td align="right">176</td>
+              <td>jupyter-core</td>
+              <td align="right">9&thinsp;987&thinsp;231</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://www.tensorflow.org/', '_blank');"
+              >
+              <td align="right">177</td>
+              <td>tensorflow</td>
+              <td align="right">9&thinsp;941&thinsp;148</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('http://babel.pocoo.org/', '_blank');"
+              >
+              <td align="right">178</td>
+              <td>babel</td>
+              <td align="right">9&thinsp;935&thinsp;002</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/pydanny/cached-property', '_blank');"
+              >
+              <td align="right">179</td>
+              <td>cached-property</td>
+              <td align="right">9&thinsp;899&thinsp;560</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="missing"
+              onclick="window.open('http://jupyter.org', '_blank');"
+              >
+              <td align="right">180</td>
+              <td>jupyterlab-pygments</td>
+              <td align="right">9&thinsp;879&thinsp;362</td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://sourceforge.net/p/ruamel-yaml/code/ci/default/tree', '_blank');"
+              >
+              <td align="right">181</td>
+              <td>ruamel-yaml</td>
+              <td align="right">9&thinsp;840&thinsp;970</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/googleapis/proto-plus-python.git', '_blank');"
+              >
+              <td align="right">182</td>
+              <td>proto-plus</td>
+              <td align="right">9&thinsp;780&thinsp;942</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/WoLpH/portalocker', '_blank');"
+              >
+              <td align="right">183</td>
+              <td>portalocker</td>
+              <td align="right">9&thinsp;780&thinsp;650</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/Microsoft/vsts-python-api', '_blank');"
+              >
+              <td align="right">184</td>
+              <td>azure-devops</td>
+              <td align="right">9&thinsp;780&thinsp;409</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/tensorflow/tensorboard', '_blank');"
+              >
+              <td align="right">185</td>
+              <td>tensorboard</td>
+              <td align="right">9&thinsp;755&thinsp;453</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('http://www.h5py.org', '_blank');"
+              >
+              <td align="right">186</td>
+              <td>h5py</td>
+              <td align="right">9&thinsp;733&thinsp;168</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/PyMySQL/PyMySQL/', '_blank');"
+              >
+              <td align="right">187</td>
+              <td>pymysql</td>
+              <td align="right">9&thinsp;707&thinsp;919</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/apache/spark/tree/master/python', '_blank');"
+              >
+              <td align="right">188</td>
+              <td>pyspark</td>
+              <td align="right">9&thinsp;706&thinsp;901</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://ipython.org', '_blank');"
+              >
+              <td align="right">189</td>
+              <td>ipykernel</td>
+              <td align="right">9&thinsp;696&thinsp;115</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('http://ipython.org', '_blank');"
+              >
+              <td align="right">190</td>
+              <td>widgetsnbextension</td>
+              <td align="right">9&thinsp;654&thinsp;225</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('http://ipython.org', '_blank');"
+              >
+              <td align="right">191</td>
+              <td>ipywidgets</td>
+              <td align="right">9&thinsp;652&thinsp;086</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/Azure/msrestazure-for-python', '_blank');"
+              >
+              <td align="right">192</td>
+              <td>msrestazure</td>
+              <td align="right">9&thinsp;633&thinsp;580</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://docs.openstack.org/pbr/latest/', '_blank');"
+              >
+              <td align="right">193</td>
+              <td>pbr</td>
+              <td align="right">9&thinsp;630&thinsp;508</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/jd/tenacity', '_blank');"
+              >
+              <td align="right">194</td>
+              <td>tenacity</td>
+              <td align="right">9&thinsp;564&thinsp;793</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/simplejson/simplejson', '_blank');"
+              >
+              <td align="right">195</td>
+              <td>simplejson</td>
+              <td align="right">9&thinsp;516&thinsp;309</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://Python-Markdown.github.io/', '_blank');"
+              >
+              <td align="right">196</td>
+              <td>markdown</td>
+              <td align="right">9&thinsp;451&thinsp;294</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/PyCQA/astroid', '_blank');"
+              >
+              <td align="right">197</td>
+              <td>astroid</td>
+              <td align="right">9&thinsp;373&thinsp;109</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('http://github.com/mongodb/mongo-python-driver', '_blank');"
+              >
+              <td align="right">198</td>
+              <td>pymongo</td>
+              <td align="right">9&thinsp;350&thinsp;251</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/AzureAD/microsoft-authentication-library-for-python', '_blank');"
+              >
+              <td align="right">199</td>
+              <td>msal</td>
+              <td align="right">9&thinsp;296&thinsp;879</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/zopefoundation/zope.interface', '_blank');"
+              >
+              <td align="right">200</td>
+              <td>zope-interface</td>
+              <td align="right">9&thinsp;251&thinsp;792</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://sourceforge.net/p/ruamel-yaml-clib/code/ci/default/tree', '_blank');"
+              >
+              <td align="right">201</td>
+              <td>ruamel-yaml-clib</td>
+              <td align="right">9&thinsp;227&thinsp;100</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/PyCQA/pylint', '_blank');"
+              >
+              <td align="right">202</td>
+              <td>pylint</td>
+              <td align="right">9&thinsp;170&thinsp;472</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('http://www.python-excel.org/', '_blank');"
+              >
+              <td align="right">203</td>
+              <td>xlrd</td>
+              <td align="right">9&thinsp;121&thinsp;384</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/regebro/tzlocal', '_blank');"
+              >
+              <td align="right">204</td>
+              <td>tzlocal</td>
+              <td align="right">9&thinsp;067&thinsp;096</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://www.tensorflow.org/', '_blank');"
+              >
+              <td align="right">205</td>
+              <td>tensorflow-estimator</td>
+              <td align="right">8&thinsp;990&thinsp;664</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('', '_blank');"
+              >
+              <td align="right">206</td>
+              <td>tensorflow-metadata</td>
+              <td align="right">8&thinsp;941&thinsp;849</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/wbond/asn1crypto', '_blank');"
+              >
+              <td align="right">207</td>
+              <td>asn1crypto</td>
+              <td align="right">8&thinsp;939&thinsp;800</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('http://pypi.python.org/pypi/termcolor', '_blank');"
+              >
+              <td align="right">208</td>
+              <td>termcolor</td>
+              <td align="right">8&thinsp;938&thinsp;640</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/ultrajson/ultrajson', '_blank');"
+              >
+              <td align="right">209</td>
+              <td>ujson</td>
+              <td align="right">8&thinsp;938&thinsp;497</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/mkleehammer/pyodbc', '_blank');"
+              >
+              <td align="right">210</td>
+              <td>pyodbc</td>
+              <td align="right">8&thinsp;938&thinsp;320</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/jupyter-widgets/ipywidgets', '_blank');"
+              >
+              <td align="right">211</td>
+              <td>jupyterlab-widgets</td>
+              <td align="right">8&thinsp;905&thinsp;852</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://www.makotemplates.org/', '_blank');"
+              >
+              <td align="right">212</td>
+              <td>mako</td>
+              <td align="right">8&thinsp;892&thinsp;182</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://alembic.sqlalchemy.org', '_blank');"
+              >
+              <td align="right">213</td>
+              <td>alembic</td>
+              <td align="right">8&thinsp;870&thinsp;804</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/martinblech/xmltodict', '_blank');"
+              >
+              <td align="right">214</td>
+              <td>xmltodict</td>
+              <td align="right">8&thinsp;797&thinsp;557</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/mitya57/secretstorage', '_blank');"
+              >
+              <td align="right">215</td>
+              <td>secretstorage</td>
+              <td align="right">8&thinsp;765&thinsp;563</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://gitlab.com/takluyver/jeepney', '_blank');"
+              >
+              <td align="right">216</td>
+              <td>jeepney</td>
+              <td align="right">8&thinsp;660&thinsp;781</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/jaraco/configparser/', '_blank');"
+              >
+              <td align="right">217</td>
+              <td>configparser</td>
+              <td align="right">8&thinsp;547&thinsp;093</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('http://radimrehurek.com/gensim', '_blank');"
+              >
+              <td align="right">218</td>
+              <td>gensim</td>
+              <td align="right">8&thinsp;504&thinsp;219</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="missing"
+              onclick="window.open('', '_blank');"
+              >
+              <td align="right">219</td>
+              <td>msal-extensions</td>
+              <td align="right">8&thinsp;499&thinsp;508</td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/martinRenou/matplotlib-inline', '_blank');"
+              >
+              <td align="right">220</td>
+              <td>matplotlib-inline</td>
+              <td align="right">8&thinsp;445&thinsp;946</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('http://tensorflow.org/serving', '_blank');"
+              >
+              <td align="right">221</td>
+              <td>tensorflow-serving-api</td>
+              <td align="right">8&thinsp;428&thinsp;243</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/identity/azure-identity', '_blank');"
+              >
+              <td align="right">222</td>
+              <td>azure-identity</td>
+              <td align="right">8&thinsp;419&thinsp;960</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('http://nltk.org/', '_blank');"
+              >
+              <td align="right">223</td>
+              <td>nltk</td>
+              <td align="right">8&thinsp;250&thinsp;929</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/pytest-dev/pytest-runner/', '_blank');"
+              >
+              <td align="right">224</td>
+              <td>pytest-runner</td>
+              <td align="right">8&thinsp;244&thinsp;628</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('http://contextlib2.readthedocs.org', '_blank');"
+              >
+              <td align="right">225</td>
+              <td>contextlib2</td>
+              <td align="right">8&thinsp;217&thinsp;499</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://bitbucket.org/stoneleaf/enum34', '_blank');"
+              >
+              <td align="right">226</td>
+              <td>enum34</td>
+              <td align="right">8&thinsp;147&thinsp;232</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://www.pycryptodome.org', '_blank');"
+              >
+              <td align="right">227</td>
+              <td>pycryptodomex</td>
+              <td align="right">8&thinsp;128&thinsp;321</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/Azure/azure-storage-python', '_blank');"
+              >
+              <td align="right">228</td>
+              <td>azure-storage-common</td>
+              <td align="right">8&thinsp;083&thinsp;094</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="missing"
+              onclick="window.open('https://github.com/Microsoft/ApplicationInsights-Python', '_blank');"
+              >
+              <td align="right">229</td>
+              <td>applicationinsights</td>
+              <td align="right">8&thinsp;046&thinsp;265</td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/serge-sans-paille/gast/', '_blank');"
+              >
+              <td align="right">230</td>
+              <td>gast</td>
+              <td align="right">7&thinsp;971&thinsp;522</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/pydata/pydata-google-auth', '_blank');"
+              >
+              <td align="right">231</td>
+              <td>pydata-google-auth</td>
+              <td align="right">7&thinsp;912&thinsp;013</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://www.datadoghq.com', '_blank');"
+              >
+              <td align="right">232</td>
+              <td>datadog</td>
+              <td align="right">7&thinsp;906&thinsp;444</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/pydata/pandas-gbq', '_blank');"
+              >
+              <td align="right">233</td>
+              <td>pandas-gbq</td>
+              <td align="right">7&thinsp;866&thinsp;440</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://www.pycryptodome.org', '_blank');"
+              >
+              <td align="right">234</td>
+              <td>pycryptodome</td>
+              <td align="right">7&thinsp;799&thinsp;222</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/rholder/retrying', '_blank');"
+              >
+              <td align="right">235</td>
+              <td>retrying</td>
+              <td align="right">7&thinsp;775&thinsp;080</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/googleapis/python-logging', '_blank');"
+              >
+              <td align="right">236</td>
+              <td>google-cloud-logging</td>
+              <td align="right">7&thinsp;720&thinsp;123</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://docs.python.org/3/library/typing.html', '_blank');"
+              >
+              <td align="right">237</td>
+              <td>typing</td>
+              <td align="right">7&thinsp;669&thinsp;536</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/Rapptz/discord.py', '_blank');"
+              >
+              <td align="right">238</td>
+              <td>discord-py</td>
+              <td align="right">7&thinsp;556&thinsp;117</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://jupyter.org', '_blank');"
+              >
+              <td align="right">239</td>
+              <td>jupyter-console</td>
+              <td align="right">7&thinsp;464&thinsp;825</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/aio-libs/aiobotocore', '_blank');"
+              >
+              <td align="right">240</td>
+              <td>aiobotocore</td>
+              <td align="right">7&thinsp;452&thinsp;088</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://pypi.org/project/dill', '_blank');"
+              >
+              <td align="right">241</td>
+              <td>dill</td>
+              <td align="right">7&thinsp;433&thinsp;176</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/fmoo/python-editor', '_blank');"
+              >
+              <td align="right">242</td>
+              <td>python-editor</td>
+              <td align="right">7&thinsp;374&thinsp;985</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/nir0s/distro', '_blank');"
+              >
+              <td align="right">243</td>
+              <td>distro</td>
+              <td align="right">7&thinsp;334&thinsp;777</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://www.tensorflow.org/tfx', '_blank');"
+              >
+              <td align="right">244</td>
+              <td>tfx-bsl</td>
+              <td align="right">7&thinsp;326&thinsp;047</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://github.com/ericvsmith/dataclasses', '_blank');"
+              >
+              <td align="right">245</td>
+              <td>dataclasses</td>
+              <td align="right">7&thinsp;293&thinsp;261</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="python3-only"
+              onclick="window.open('https://www.tensorflow.org/tfx/transform/get_started', '_blank');"
+              >
+              <td align="right">246</td>
+              <td>tensorflow-transform</td>
+              <td align="right">7&thinsp;283&thinsp;933</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-stop"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('http://jupyter.org', '_blank');"
+              >
+              <td align="right">247</td>
+              <td>jupyter</td>
+              <td align="right">7&thinsp;194&thinsp;261</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('http://www.grantjenks.com/docs/sortedcontainers/', '_blank');"
+              >
+              <td align="right">248</td>
+              <td>sortedcontainers</td>
+              <td align="right">7&thinsp;130&thinsp;167</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/getsentry/sentry-python', '_blank');"
+              >
+              <td align="right">249</td>
+              <td>sentry-sdk</td>
+              <td align="right">7&thinsp;120&thinsp;273</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+            <tr 
+                class="both"
+              onclick="window.open('https://github.com/boto/boto/', '_blank');"
+              >
+              <td align="right">250</td>
+              <td>boto</td>
+              <td align="right">7&thinsp;116&thinsp;738</td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+              <td>
+                
+                  <i class="icon icon-check"></i> 
+                
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </main>
+    </div>
+  </body>
+
+  <script charset="utf-8">
+    var data = [{
+      values: [137, 109, 1, 3],
+      labels: ['2 & 3', 'Only 3', 'Only 2', 'No Info'],
+      hole: 0.5,
+      type: 'pie',
+      marker: {
+        colors: [
+          '#daf9bb',
+          '#bbd5f9',
+          '#fca46a',
+          '#aaaaaa',
+        ]
+      },
+      textinfo: 'label',
+      showlegend: false,
+    }];
+
+    var layout = {
+      height: 500,
+      width: 400,
+      autosize: true,
+      showlegend: false,
+      margin: {l: 0, r: 0, b: 0, t: 0, pad: 0},
+    };
+    Plotly.newPlot('plot', data, layout, {responsive: true}); 
+  </script>
+</html>
