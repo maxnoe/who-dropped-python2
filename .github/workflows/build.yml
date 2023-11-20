@@ -1,0 +1,36 @@
+name: Build
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  schedule:
+    - cron: '30 5 * * 1'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Build
+        run: python publish.py
+
+      - name: Deploy
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: build

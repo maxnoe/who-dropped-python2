@@ -1,7 +1,10 @@
-import aiohttp
-from jinja2 import Template
 import asyncio
 from collections import defaultdict
+from pathlib import Path
+from shutil import copy2
+
+import aiohttp
+from jinja2 import Template
 
 CLASSIFIER = 'Programming Language :: Python :: {}'
 VERSIONS_3 = ['3', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9', '3.10']
@@ -48,6 +51,9 @@ async def get_project_data(project, session):
 
 
 async def main():
+    out = Path("build")
+    out.mkdir(exist_ok=True)
+
     async with aiohttp.ClientSession() as session:
         projects, last_update = await get_most_dowloaded_projects(session)
         futures = [get_project_data(p, session) for p in projects[:LIMIT]]
@@ -67,13 +73,15 @@ async def main():
     with open('template.html') as f:
         template = Template(f.read())
 
-    with open('index.html', 'w') as f:
+    with (out / 'index.html').open('w') as f:
         f.write(template.render(
             projects=projects[:LIMIT],
             limit=LIMIT,
             summary=summary,
             last_update=last_update,
         ))
+
+    copy2("style.css", out)
 
 
 if __name__ == '__main__':
