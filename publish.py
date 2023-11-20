@@ -11,6 +11,13 @@ VERSIONS_3 = ['3', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9', '3.10']
 VERSIONS_2 = ['2', '2.6', '2.7']
 LIMIT = 250
 
+COLORS = {
+    '2 & 3': '#daf9bb',
+    'Only 3': '#bbd5f9',
+    'Only 2': '#fca46a',
+    'No Info': '#aaaaaa',
+}
+
 
 async def get_most_dowloaded_projects(session):
     url = 'https://hugovk.github.io/top-pypi-packages/top-pypi-packages-30-days.json'
@@ -62,13 +69,17 @@ async def main():
     summary = defaultdict(int)
     for p in projects:
         if p['python2'] and p['python3']:
-            summary['both'] += 1
+            summary['2 & 3'] += 1
         elif p['python3'] and not p['python2']:
-            summary['python3-only'] += 1
+            summary['Only 3'] += 1
         elif p['python2'] and not p['python3']:
-            summary['python2-only'] += 1
+            summary['Only 2'] += 1
         else:
-            summary['missing_info'] += 1
+            summary['No Info'] += 1
+
+    values = [v for v in summary.values() if v > 0]
+    labels = [k for k, v in summary.items() if v > 0]
+    colors = [COLORS[l] for l in labels]
 
     with open('template.html') as f:
         template = Template(f.read())
@@ -77,7 +88,9 @@ async def main():
         f.write(template.render(
             projects=projects[:LIMIT],
             limit=LIMIT,
-            summary=summary,
+            values=values,
+            labels=labels,
+            colors=colors,
             last_update=last_update,
         ))
 

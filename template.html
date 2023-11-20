@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Who dropped Python 2?</title>
 
-    <script src="https://cdn.plot.ly/plotly-1.47.4.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
     <link rel="stylesheet" href="style.css">
@@ -72,25 +72,20 @@
 
   <script charset="utf-8">
     var data = [{
-      values: [{{ summary['both'] }}, {{ summary['python3-only'] }}, {{ summary['python2-only'] }}, {{ summary['missing_info'] }}],
-      labels: ['2 & 3', 'Only 3', 'Only 2', 'No Info'],
+      values: {{ values }},
+      labels: {{ labels }},
       hole: 0.5,
       type: 'pie',
       marker: {
-        colors: [
-          '#daf9bb',
-          '#bbd5f9',
-          '#fca46a',
-          '#aaaaaa',
-        ]
+        colors: {{ colors }}
       },
       textinfo: 'label',
       showlegend: false,
     }];
 
     var layout = {
-      height: 500,
-      width: 400,
+      height: 400,
+      width: 600,
       autosize: true,
       showlegend: false,
       margin: {l: 0, r: 0, b: 0, t: 0, pad: 0},
