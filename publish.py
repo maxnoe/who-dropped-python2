@@ -7,7 +7,8 @@ import aiohttp
 from jinja2 import Template
 
 CLASSIFIER = 'Programming Language :: Python :: {}'
-VERSIONS_3 = ['3', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9', '3.10']
+CLASSIFIER_3_ONLY = 'Programming Language :: Python :: 3 :: Only'
+VERSIONS_3 = ['3', '3.3', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9', '3.10', '3.11', '3.12']
 VERSIONS_2 = ['2', '2.6', '2.7']
 LIMIT = 250
 
@@ -36,7 +37,16 @@ async def get_project_data(project, session):
     data = await get_pypi_data(project['project'], session)
     project['url'] = data['info'].get('home_page')
     # sometimes empty, sometimes None
-    requires_python = data['info']['requires_python'] or ''
+    requires_python = (data['info']['requires_python'] or '').replace(' ', '')
+
+    project['download_count'] = '{:,d}'.format(
+        project['download_count']
+    ).replace(',', '&thinsp;')
+
+    if CLASSIFIER_3_ONLY in data['info']['classifiers']:
+        project['python2'] = False
+        project['python3'] = True
+        return project
 
     project['python2'] = any(
         CLASSIFIER.format(v) in data['info']['classifiers']
@@ -48,11 +58,7 @@ async def get_project_data(project, session):
     project['python3'] = any(
         CLASSIFIER.format(v) in data['info']['classifiers']
         for v in VERSIONS_3
-    ) or '>=3' in requires_python
-
-    project['download_count'] = '{:,d}'.format(
-        project['download_count']
-    ).replace(',', '&thinsp;')
+    ) or '>=3' in requires_python or '>3.' in requires_python
 
     return project
 
